@@ -1,0 +1,43 @@
+Studenized Residual => residual normalized by leverage and mean squared error.
+High Leverage => Identify extreme x values.
+Outlier => Identify extreme y values
+Multicollinearity => three or more variables are correlated amongst each other even though two of them are not.
+
+
+Just because you have a outlier or high leverage point doesn't mean it is influential.
+For a point to be  influential, it would impact the predicted responses; estimated slope coefficients and hypothesis tests
+
+*Cook's Distance for an observation quantifies how much does the fitted values change when that observation is removed.
+*Multicollineratiy is detected by the variance inflation factor(VIF) i.e how much does the variance of predictor increases if it were to be correlated to other predictors.
+	VIF = 1/(1-R_k).
+
+R_k : r square value obtained by regressing the kth predictor on the remaining predictors;.
+
+VIF = 1 means no correlation.
+VIF > 4 needs investigation.
+
+
+
+
+
+Non linearity => studendized residual vs fitted values
+Hetroskedasticity(Non constant variance) => sqrt(studendized residual) vs fitted values
+Influence Plot => studendized residual vs leverage. Look for large circles. Ideally these would have high influence and high residual.
+Q-Q Plot => Along the staight line indicates normalizty.(http://stats.stackexchange.com/questions/101274/how-to-interpret-a-qq-plot)		
+
+* High Influence points 
+   - Measure of Fit(R2) decreases; standard error of the coefficient goes up thereby increasing the confidence intervals; t-statistic goes down screwing up hypothesis test results.
+
+* Non-Constant Variance of residual
+   - Variance of residual decides the standard error of the coefficient estimates; Effecting the standard error; confidence interval and hypothesis tests.
+
+* Normality Assumption.
+   - Hypothesis test and confidence interval asume normality.
+
+* Non-linearity.
+   - R2 may be down and standard error; confidence interval; hypothesis test are under suspect
+
+* Multi-collineratiy.
+   - Coefficients may change depending on which variables are included in the model leading to incorrect conclusions.
+   - Standard error goes up increasing confidence intervals and hypothesis test.
+   - It doesn't impact the prediction much hence not much change in R^2. 
